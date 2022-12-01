@@ -37,11 +37,18 @@ class Employee:
         return 0.05
 
 class SeniorEmployee(Employee):
+    def __init__(self, name, age, salary, is_bearded):
+        self.is_bearded = is_bearded
+        super().__init__(name, age, salary)
+
     def get_bonus(self):
         return 0.1
     pass
 
 class Manager(Employee):
+    def __init__(self, name, age, salary, is_bald):
+        self.is_bald = is_bald
+        super().__init__(name, age, salary)
     def get_bonus(self):
         return 0.2
 
@@ -79,13 +86,13 @@ class Team:
 
 
 #Набираем работников
-se_001 = SeniorEmployee('Денис', 35, 40000)
+se_001 = SeniorEmployee('Денис', 35, 40000, True)
 e_001 = Employee('Леонид', 26, 20000)
 e_002 = Employee('Виктор', 24, 20000)
-m_001 = Manager('Ипполит', 45, 100000)
+m_001 = Manager('Ипполит', 45, 100000, True)
 e_003 = Employee('Прокофий', 21, 20000)
 e_004 = Employee('Порфирий', 22, 20000)
-se_002 = SeniorEmployee('Арсений', 35, 40000)
+se_002 = SeniorEmployee('Арсений', 35, 40000, False)
 e_005 = Employee('Евгений', 25, 20000)
 e_006 = Employee('Василий', 24, 20000)
 #Собираем команду
